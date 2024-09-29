@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -24,12 +25,11 @@ class MyApp extends StatelessWidget {
                   ],
                 );
 
-                print(credential.userIdentifier);
-                print(credential.email);
-                print(credential);
-
-                // Now send the credential (especially `credential.authorizationCode`) to your server to create a session
-                // after they have been validated with Apple (see `Integration` section for more information on how to do this)
+                if (kDebugMode) {
+                  print(credential.userIdentifier);
+                  print(credential.email);
+                  print(credential);
+                }
               },
             ),
           ),
